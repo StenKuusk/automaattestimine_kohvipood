@@ -11,14 +11,16 @@ describe('Contact testid', () => {
 
   test('Navigeerimislingid on õigesti seadistatud', () => {
     render(<ContactPage />);
-    const homeLink = screen.getByText(/Home/i);
-    const aboutLink = screen.getByText(/About/i);
-    const contactLink = screen.getByText(/Contact/i);
-
+    const links = screen.getAllByText(/Home|About|Contact/i);
+    expect(links).toHaveLength(4);
+  
+    const [rootLink, homeLink, aboutLink, contactLink] = links;
+  
+    expect(rootLink.getAttribute('href')).toBeNull();
     expect(homeLink).toHaveAttribute('href', 'homepage.html');
     expect(aboutLink).toHaveAttribute('href', 'about.html');
     expect(contactLink).toHaveAttribute('href', 'contact.html');
-  });
+  });  
 
   test('Vormi väljad on õigesti kuvatud', () => {
     render(<ContactPage />);

@@ -12,7 +12,8 @@ describe('Contacted testid', () => {
   test('Tagasi nupp suunab õigesse kohta', () => {
     render(<ContactedPage />);
     const returnButton = screen.getByRole('button', { name: /Return/i });
-    expect(returnButton).toHaveAttribute('formaction', 'homepage.html');
+    const form = returnButton.closest('form');
+    expect(form).toHaveAttribute('action', 'homepage.html');
   });
 
   test('Lehe sisu on õigesti tõlgendatud', () => {
@@ -23,14 +24,16 @@ describe('Contacted testid', () => {
 
   test('Navigeerimislingid on õigesti seadistatud', () => {
     render(<ContactedPage />);
-    const homeLink = screen.getByText(/Home/i);
-    const aboutLink = screen.getByText(/About/i);
-    const contactLink = screen.getByText(/Contact/i);
-
+    const links = screen.getAllByText(/Home|About|Contact/i);
+    expect(links).toHaveLength(5);
+  
+    const [rootLink, homeLink, aboutLink, contactLink] = links;
+    
+    expect(rootLink.getAttribute('href')).toBeNull();
     expect(homeLink).toHaveAttribute('href', 'homepage.html');
     expect(aboutLink).toHaveAttribute('href', 'about.html');
     expect(contactLink).toHaveAttribute('href', 'contact.html');
-  });
+  });  
 
   test('Jaluse sisu on korrektne', () => {
     render(<ContactedPage />);
