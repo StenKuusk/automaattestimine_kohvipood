@@ -1,0 +1,46 @@
+{
+  "name": "projekt-veebipood",
+  "version": "1.0.0",
+  "description": "Veebipood kus kliendid saavad shopata.",
+  "main": "Express.js",
+  "scripts": {
+    "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+    "start-client": "react-scripts start",
+    "start-server": "node Express.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "debug": "^4.3.6",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "sequelize": "^6.37.3",
+    "url": "^0.11.3",
+    "workbox-build": "^7.1.1",
+    "workbox-webpack-plugin": "^7.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.4"
+  }
+}

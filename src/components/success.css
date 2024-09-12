@@ -1,0 +1,24 @@
+.success-section {
+    padding: 300px;
+    background-image: url('/public/heart.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.success-section h2 {
+    color: whitesmoke;
+    text-shadow: 
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+.success-section p {
+    color: whitesmoke;
+    text-shadow: 
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}

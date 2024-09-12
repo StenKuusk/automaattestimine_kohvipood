@@ -1,0 +1,34 @@
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-list {
+    padding-right: 220px;
+  }
+
+  .purchase-button {
+    padding: 10px 20px;
+    background-color: #993f0b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 30px;
+}
+
+  .purchase-button:hover {
+    background-color: #c2500e;
+}
